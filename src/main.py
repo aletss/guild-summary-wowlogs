@@ -13,13 +13,14 @@ JSON_FIGHT_FOLDER_PATH = REPO_PATH + config.JSON_FIGHT_FOLDER
 # Create json folder if not exist
 os.makedirs(JSON_FOLDER_PATH, exist_ok=True)
 os.makedirs(JSON_FIGHT_FOLDER_PATH, exist_ok=True)
+os.makedirs(DATA_FOLDER_PATH, exist_ok=True)
 
 # List JSONs already loaded
 logs_already_loaded = [id.replace(".json", "") for id in os.listdir(JSON_FOLDER_PATH)]
 
 # Get list of logs
 logs_guild, status = get_logs_guild(
-    guild_name=config.GUILD,
+    guild_name=config.GUILD_NAME,
     server_name = config.SERVER,
     server_region = config.REGION,
     key = config.V1_CLIENT_KEY
